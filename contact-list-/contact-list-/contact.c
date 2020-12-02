@@ -4,7 +4,7 @@
 
 void check_capacity(Contact* pc)
 {
-	if ((pc->sz) == pc->capacity - 1)
+	if ((pc->sz) == pc->capacity)
 	{
 		printf("通讯录已满，无法添加。正在扩容\n");
 		//增加容量
@@ -74,7 +74,7 @@ void add_contact(Contact* pc)
 	printf("请输入性别：>");
 	scanf("%s", pc->data[pc->sz].sex);
 	printf("请输入年龄：>");
-	scanf("%d", &(pc->data[pc->sz].age));
+	scanf("%hd", &(pc->data[pc->sz].age));
 	pc->sz++;
 	printf("添加成功。\n");
 	//}
@@ -118,7 +118,7 @@ void modify_contact(Contact* pc)
 		printf("请输入新的性别：>");
 		scanf("%s", pc->data[ret].sex);
 		printf("请输入新的年龄：>");
-		scanf("%d", &(pc->data[ret].age));
+		scanf("%hd", &(pc->data[ret].age));
 		printf("修改成功。\n");
 	}
 }
